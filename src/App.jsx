@@ -123,13 +123,21 @@ export default function App() {
       try {
         const snap = await getDocs(collection(db,'students'))
         if (snap.empty) {
-          for (const s of STUDENTS_SEED) {
+          // Seed par batch de 20 pour éviter les timeouts
+          for (let i = 0; i < STUDENTS_SEED.length; i++) {
+            const s = STUDENTS_SEED[i]
             await setDoc(doc(db,'students',s.id), {
-              nom:s.nom, ticket:s.ticket, total:s.total,
-              tresoriere:s.tresoriere, tresPhone:s.tresPhone,
-              pin:null, paye:0, createdAt:serverTimestamp()
+              nom:       s.nom,
+              ticket:    s.ticket,
+              total:     s.total,
+              tresoriere:s.tresoriere,
+              tresPhone: s.tresPhone,
+              pin:       null,
+              paye:      s.paye || 0,   // ← paiements existants du PDF
+              createdAt: serverTimestamp()
             })
           }
+          console.log('✅ Seeded', STUDENTS_SEED.length, 'étudiants avec paiements existants')
         }
         // Live listeners
         onSnapshot(collection(db,'students'), snap2 => {
