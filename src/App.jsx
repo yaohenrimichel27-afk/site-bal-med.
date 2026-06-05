@@ -9,12 +9,12 @@ import { STUDENTS_SEED } from './lib/students.js'
 CONFIG
 ═══════════════════════════════════════════════ */
 const ADMINS = {
-pco: { id: 'pco2026admin', pw: 'Bal56#Med2026', role: 'pco', name: 'PCO' }
+pco: { id: 'pco2026admin', pw: 'Bal56Med2026', role: 'pco', name: 'PCO' }
 }
 const TRES_LOGINS = [
-{ id: 'djeni2026', pw: 'Djeni#Bal56', name: 'Djeni', phone: '2250564924202', role: 't
-{ id: 'yarabe2026', pw: 'Yarabe#Bal56', name: 'Yarabe', phone: '2250544993454', role: 't
-{ id: 'assassy2026', pw: 'Assassy#Bal56', name: 'Assassy', phone: '2250788222743', role: 't
+{ id: 'djeni2026', pw: 'DjeniBal56', name: 'Djeni', phone: '2250564924202', role: 'tr
+{ id: 'yarabe2026', pw: 'YarabeBal56', name: 'Yarabe', phone: '2250544993454', role: 'tr
+{ id: 'assassy2026', pw: 'AssassyBal56', name: 'Assassy', phone: '2250788222743', role: 'tr
 ]
 /* ═══════════════════════════════════════════════
 HELPERS
