@@ -103,7 +103,7 @@ async function init() {
 try {
 const snap = await getDocs(collection(db,'students'))
 if (snap.empty) {
-// Batch writes -- 317 etudiants en 1 seule requete rapide
+// Batch writes — 317 etudiants en 1 seule requete rapide
 const { writeBatch } = await import('firebase/firestore')
 const BATCH_SIZE = 499
 for (let start = 0; start < STUDENTS_SEED.length; start += BATCH_SIZE) {
@@ -423,8 +423,8 @@ return <div key={v.id} className="v-item">
 <div className="field">
 <label className="field-label">Type de ticket</label>
 <select className="field-input" value={addTicket} onChange={e=>setAddTicket(e
-<option value="30000">Solo -- 30 000 FCFA</option>
-<option value="55000">Duo -- 55 000 FCFA</option>
+<option value="30000">Solo — 30 000 FCFA</option>
+<option value="55000">Duo — 55 000 FCFA</option>
 </select>
 </div>
 <button className="btn btn-gold" onClick={addStudent}>Inscrire →</button>
@@ -574,7 +574,7 @@ return (
 <div className="pin-dots">{[1,2,3,4].map(i=><div key={i} className={`pin-dot${pin.l
 <input className="field-input big" type="number" inputMode="numeric" pattern="[0-9]
 value={pin} onChange={handlePin} onKeyDown={e=>e.key==='Enter'&&submit()}
--- Crée
+— Crée
 style={{textAlign:'center',marginBottom:16}} autoFocus/>
 <button className="btn btn-gold" onClick={submit} disabled={busy}>
 {isNew?'Créer mon PIN →':'Accéder →'}
@@ -704,7 +704,7 @@ Je paie en Tarif Duo (55 000 F pour 2)
 {/* Duo info banner */}
 {duo && (
 <motion.div variants={item} className="alert alert-info" style={{marginBottom:12,fo
-Jauge commune avec <strong>{binome?.nom||'...'}</strong> -- Les versements des
+Jauge commune avec <strong>{binome?.nom||'...'}</strong> — Les versements des
 </motion.div>
 )}
 {/* Progress */}
@@ -792,7 +792,7 @@ createdAt: serverTimestamp()
 })
 setSending(false)
 go('etuDash')
-// Redirection directe -- fonctionne sur tous les navigateurs mobiles
+// Redirection directe — fonctionne sur tous les navigateurs mobiles
 window.location.href = waUrl
 }
 return (
